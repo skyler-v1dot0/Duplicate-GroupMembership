@@ -13,5 +13,5 @@ $groups = Get-ADPrincipalGroupMembership -Identity (Get-ADUser -Filter "Name -li
 #Add new user to groups from current user redirect errors to null
 #the below method doesn't work because -Identity is not getting its info from the pipe so the wrong object type is presented
 #Add-ADGroupMember -Identity (Get-ADGroup $groups) -Members $newuser -WhatIf
-echo $groups | Add-ADGroupMember -Members $newuser 2> $null -WhatIf
+echo $groups | Add-ADGroupMember -Members $newuser 2> $null 
 Write-Host "Press any key to continue: " -ForegroundColor Green -NoNewline; Read-Host
